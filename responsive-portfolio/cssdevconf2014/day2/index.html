@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Rachel Naomi Design | CSS Dev Conference 2014 - Day 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/style.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <header class="pad">
+  Rachel Naomi Design
+<nav role="navigation">
+  <ul>
+    <li><a href="../">Css Dev Conf</a></li>
+    <li><a href="../../">About</a></li>
+    <!-- <li><a href="#">Porfolio</a></li>
+    <li><a href="#">Contact</a></li> -->
+  </ul>
+</nav>  
+</header>
+<div class="container">
+      <h1>CSS Dev Conference 2014, New Orleans</h1>
+  <section class="col2">
+    <h2>Day 2</h2>
+  </section>
+  <section class="col2">
+
+<h2>Keynote Q+A, Dan Cederholm, Dribbble</h2>
+
+<ul>
+<li>Learned by looking at other people's code</li>
+<li>Inspector helps</li>
+<li>He was reluctant to go into SASS</li>
+<li>going from client work where you can make the perfect website each time</li>
+<li>exciting to stay on game and learn from each project</li>
+<li>Product is maintaining the code is different</li>
+<li>Legacy with dribble</li>
+<li>Make your own side projects
+
+<ul>
+<li>Html newsletters</li>
+<li>store</li>
+</ul>
+</li>
+<li>being a freelancer, you can care about the css structure</li>
+<li>when own a product, you have to care about the css longer and work directly with developers, now he does</li>
+<li>now communicate to see how they use css</li>
+<li>getting backend developer process perspective</li>
+<li><a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better">scss format vs sass</a>
+
+<ul>
+<li>no brackets for clean</li>
+<li>like the idea that scss is still css</li>
+<li>Dan likes SCSS</li>
+</ul>
+</li>
+<li>Rails built in scss compiler
+
+<ul>
+<li>command line for watch</li>
+<li>scout</li>
+<li>jekyll does compiler automatically too</li>
+</ul>
+</li>
+<li>he doesn't use functions, uses placeholder selectors
+
+<ul>
+<li>easier to making a existing stylesheet better by SASSifying it</li>
+</ul>
+</li>
+<li>Jen Simmons: Culture of making web have changed. Convincing web and clients did listen. Starting small and what is his perspective on how commercial the web has gotten
+
+<ul>
+<li>Feels out of his league, with so much to learn</li>
+<li>learning css 10-15 yrs ago was easier because of way browser released. so you had time frame to make best practices and didnt have to worry so much about emerging tech. You had time for knowledge share and there weren't multi devices</li>
+<li>Overwhelming learning from scratch, how do they know what to focus on and what is important. it is more cloudy and overwhelming</li>
+<li>so many different ways to solve a problem and there isn't one way to do things</li>
+</ul>
+</li>
+<li>backend is just as important as backend
+
+<ul>
+<li>designers should know coding, undertand what programmers are trying to do</li>
+<li>separate files in scss and forms. sass include help reuse partial sass files, change file name and use as much or as little sass as you want</li>
+<li>"Teach designers basics of CSS &amp; then move to SASS." It's like the danger of  learning HTML w/ Emmet</li>
+<li><a href="http://hslpicker.com/">HSL picker</a></li>
+</ul>
+</li>
+</ul>
+  </section>
+  <section class="col2">
+<h2>CSS Architecture, Jon Snook</h2>
+
+<ul>
+<li>Paul Battley: "observing the max number of people who can productively simultaneously work on CSS is one"
+
+<ul>
+<li>misconception that css is easy</li>
+</ul>
+</li>
+<li>non semantic utilities classes css is hard to work with. not clear to what it means</li>
+<li>about understandability and move code and understand the interaction</li>
+<li>sometimes bad class names is a step away from inline code</li>
+<li>nesting sass, you only care about the last element, it is too tied to html structure</li>
+<li>somtimes being too specific is too complicated and you have extra code</li>
+<li>@import separate sass files for different stuctures. modularize element</li>
+<li>Shopify
+
+<ul>
+<li>Start css from scratch, but did not want to completely obliterate the current code</li>
+</ul>
+</li>
+<li>Naming Convention:
+
+<ul>
+<li>SMACCS book
+
+<ul>
+<li>Key thing is categorization</li>
+<li>layout style or state</li>
+</ul>
+</li>
+<li>Clarifies intent, name is important and difficult</li>
+<li>Use class over ID, do not use a grenade to dig a hole and when a shovel will do</li>
+<li><p>Specificity chart</p>
+
+<ul>
+<li>inline, ID, class (pseudo-classes and attribute-selectors), element (pseudo-elements)</li>
+<li>class and id are specific, but class is better</li>
+</ul>
+
+
+<p>  a {}
+  .subdued {}
+  #cancel {}</p>
+
+<ul>
+<li>might want a link that is #cancel but want it .subdued</li>
+<li>add important to class</li>
+<li>you can also add more selector #cancel.subdued {}</li>
+</ul>
+
+
+<p>  or</p>
+
+<p>  <a href="" id="cancel" class="selector">test</a></p></li>
+<li><p>Buttons: btn btn-large</p></li>
+<li>modal: modal modal-large</li>
+<li>.btn.large? why not?
+
+<ul>
+<li>we have large btn and field and modal, harder to find and make the change in one place and not break
+class="btn large"</li>
+</ul>
+</li>
+<li>context is everything
+
+<ul>
+<li>change loading spinner, search and found two class with loading. they did two different things based on what applied to. everything was nested</li>
+</ul>
+</li>
+<li>Avoid nesting to keep things clear
+.is-btn-active
+.is-btn-disabled
+
+<ul>
+<li>clarifies intent Shopify now: .btn-is-active</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>use prefix for versioning</p>
+
+<ul>
+<li>pure css, hyphen classes to separate it from project
+.next-btn .next-btn-is-active (yahoo)</li>
+<li>version css to iterate, class names get long</li>
+<li>tooling hasnt caught up. took should convert long class names to something short
+
+<ul>
+<li>Google: they do that and their classes are illegible</li>
+</ul>
+</li>
+<li>BEM: Block element modifier
+.ModuleName
+.ModuleName-subModule
+.ModuleName--subComponent</li>
+</ul>
+</li>
+<li><p>Naming Convention</p>
+
+<ul>
+<li>Pick a system that works for you and your team</li>
+<li>be consistent</li>
+<li>concsider:
+
+<ul>
+<li>root node</li>
+<li>child nodes</li>
+<li>style variation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Have your CSS and HTML do one thing and one thing only
+
+<ul>
+<li><strong>The single responsiblity theory</strong>
+.grid > .grid-col .module</li>
+<li>separate classes in divs
+isolate module into own thing and separate from layout, isolate</li>
+</ul>
+<!-- <pre><code><ul class="grid">
+  <li>
+   {{item}}
+  </li>
+  </ul>
+</code>
+</pre> -->
+<ul>
+<li>isolate and test</li>
+<li>test module
+  li.module
+  div.module
+lost ability to test module by itself
+put class on something w/o dependencies, you can test. div is easier to test since it is not dependent</li>
+<li>Modularization is Isolation</li>
+<li>forget that we will see action in a few places with different types of content like dropdown</li>
+</ul>
+</li>
+<li><strong>Avoid styling based on context</strong>
+
+<ul>
+<li>div.dropdown>ul>li
+
+<ul>
+<li>ended up with filters, calendar, all drop down</li>
+<li>ended up duplicating code, what constitutes a module is not always obvious</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Depth of Applicability
+
+<ul>
+<li>nesting, don't nest more than 3 levels deep</li>
+<li>Recognition of pattern, once you starting nesting deeply, it is hard to reuse</li>
+<li>preprocessors do not solve architecture problems
+
+<ul>
+<li>you can end up nesting too much, extend inappropriately</li>
+</ul>
+</li>
+<li>OK with nested media queries, get what he wants. put them with modules, doesnt split them up in diff style sheets</li>
+<li>extending classes
+
+<ul>
+<li>end up with a lot more code than writing plain css, keep it simple</li>
+<li>by not ntesting and extending you have cleaner output</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Documentation
+
+<ul>
+<li>Had a prototype engine at Yahoo</li>
+<li>Anyone at shopify could be doing something else</li>
+<li><a href="http://rizzo.lonelyplanet.com/styleguide/design-elements/colours">Lonely Planet style guide</a></li>
+<li>Shopify style guide for all designers and devs</li>
+<li>Make the right things easy and the wrong things hard</li>
+</ul>
+</li>
+<li>Modularize: use naming conventions to establish identity</li>
+<li>iterate: keep trying and refactor over and over, buttons, one piece at a time, shame files: try to eliminate</li>
+<li>Documentation: good for everyone</li>
+</ul>
+  </section>
+  <section class="col2">
+    <h2>Layout Design Patterns, John Ferris, Aten Design Group</h2>
+
+<ul>
+<li>Recurring problem
+
+<ul>
+<li>I get Hangry</li>
+<li>Solution: Tacos, but depends on context</li>
+</ul>
+</li>
+<li>Designers and Devs love solving problems</li>
+<li>Order of html is important
+
+<ul>
+<li>box model proerpties: box-sizing, height, width, max-height, max-width, border-width, padding, margin</li>
+<li>Flow properties: display, float, clear, overflow, flex-<em>, shape-</em></li>
+<li>Position aprorperties: position, top, right, bottom, left, transorm, z-index
+
+<h3>Colorado Public Radio</h3></li>
+<li>If we remove properties you get one column mess, layout is really important</li>
+<li>Layout is important even if one column in mobile, needs to be legible</li>
+<li>Start by trying to define reoccuring problems that you can solve</li>
+<li>If we can figure out two columns, then we can figure out
+the other columns in the rest of the site</li>
+<li> Issue with Ads, found a way</li>
+</ul>
+</li>
+<li>Constrained Elements
+
+<ul>
+<li>.l--constrained</li>
+<li>.l--<em>layout</em></li>
+<li>divide rows of relative content, translates down to mobile no matter what screen width you're at, no long sidebar</li>
+</ul>
+</li>
+<li>reusable layouts
+  .l--[modifier]
+  .l-primary
+  .l-secondary
+  .l-tertiary
+  .l--triptych around it</li>
+<li>Component layouts is modified
+
+<ul>
+<li>article--teaser > .article-figure .article-header .article-content</li>
+<li>if ommit selector, the styles could bleed down to other layouts. <strong>use direct descendent selectors    </strong></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Gutter Pull</h3>
+
+<ul>
+<li>Pull quotes. add negative margin
+  .book--teaser{
+  padding-left: 10em;max-width: 32em;}
+  .book-teaser > .book-cover {
+  float: left; width: 8em; margin-left: -10em;}</li>
+</ul>
+
+
+<h3>margin Overflow</h3>
+
+<p>.block-title{}
+grid with 3 items padded equally, but edge doesnt line up to uter grid, add negative margin to line up text</p>
+
+<h3>Intrinisc ratios</h3>
+
+<ul>
+<li>happens with responsive site with iframe video
+
+<ul>
+<li>find out aspect ratio of video padding-top: height/width=63.25%</li>
+<li>creates correctly proportion video</li>
+<li>fit vid help determin ratio, but if know ahead time, accomplish with CSS</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Grids</h3>
+
+<ul>
+<li>Came from medieval scribes.</li>
+</ul>
+
+
+<h4>Links</h4>
+
+<ul>
+<li><a href="http://www.amazon.com/Ordering-Disorder-Principles-Design-Voices/dp/0321703537">Ordering Disorder Koi Vinh</a> and <a href="http://www.designingfortheweb.co.uk/">Designing for the web</a></li>
+<li><a href="http://www.amazon.com/Making-Breaking-Grid-Graphic-Workshop/dp/1592531253">Making and Breaking the Grid</a></li>
+<li><em>I prefer: <a href="https://www.inkling.com/read/history-of-graphic-design-philip-meggs-5th/chapter-16/jan-tschichold-and-the-new">jan tschichold grid</a></em></li>
+</ul>
+
+
+<h4>Gutter grid: give a gutter to space content</h4>
+
+<h4>Gutterless grid: use empty columns for grid: 23/24 column grid</h4>
+
+<h4>Asymmetric grid: grid designed for content: Shirty</h4>
+
+<h4>Class-based grid system: Zurb foundation grid</h4>
+
+<h3>Semantic: align elements to grid by applying layout properties</h3>
+
+<ul>
+<li>Susy or <a href="https://github.com/at-import/Singularity">singularity</a> for grid framework: depends on projects</li>
+</ul>
+
+
+<h4>Flow layout: inlining series of elements with defined widths</h4>
+
+<ul>
+<li>wrap to next column, good for collection of expert profiles
+
+<ul>
+<li>allow to wrap around</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>Isolation layout: give each negative floating margin</h4>
+<ul>
+<li>preprocessors are great for the math</li>
+<li>can determine which way floating</li>
+</ul>
+
+<ul>
+<li><a href="http://ui-patterns.com/">uipatterns.com</a> it is out of date but good example</li>
+<li><a href="http://bradfrostweb.com/blog/web/responsive-nav-patterns/">responsive navigation patterns, brad frost</a></li>
+<li>Design patterns, for computer science for C++</li>
+<li><a href="http://www.amazon.com/The-Timeless-Building-Christopher-Alexander/dp/0195024028">Christopher Alexander: The timeless way of building</a> for artchitecture and buildings
+
+<ul>
+<li>recursive layouts, lights, spots for outdoor positions depend on climate</li>
+<li>design patterns are not designed, they are observed</li>
+<li>be mindful of feel good code, make it repeatable. mixins.</li>
+</ul>
+</li>
+</ul>
+  </section>
+  <section class="col2">
+<h2>Best of: CSS, Accessibility, and YOU!, Derek Featherstone</h2>
+
+<ul>
+<li>Bath tub/Shower was not group together to explain how the shower worked.</li>
+<li>Group closely related items together: <strong>Principle of Proximity</strong></li>
+<li>Problem: multi column layouts make using an interface very challenging for low vision
+
+<ul>
+<li>Answers so far from question, instructions might as well not exist since hard to find</li>
+<li>Issue in terms of muscle memory: left right
+quit, previous, submit (3)</li>
+<li>make it hard for low vision to use form</li>
+<li>only different between words is words, must read buttons</li>
+</ul>
+</li>
+<li>Solution
+
+<ul>
+<li>Stacking is much easier to see, CTA different visual weight</li>
+<li>Create single vertical stack, make it much easier to use</li>
+<li>When you see non mobile optimized site, it is the same as low vision</li>
+<li>Change the way we design</li>
+<li>Use straw test to analyze your own designs. make a small view port with one eye</li>
+</ul>
+</li>
+<li>Accessbility users:
+
+<ul>
+<li>blind</li>
+<li>low-ision</li>
+<li>hearing</li>
+<li>mobility/dexterity (fine motor control, low-strength, single-mindeness, one hand)
+
+<ul>
+<li>low strenth pefer touch screen than keyboard</li>
+<li>Tiny targets in mobile, might need bigger targets for stylus 60x60</li>
+<li><a href="http://examples.simplyaccessible.com/">examples.simplyaccessible.com</a></li>
+</ul>
+</li>
+<li>Congitive (attention, memory-related, literacy, routines/predictability)
+
+<ul>
+<li>His father register MP3 player: Some forms are difficult for him. He expected validation in form. hesitant to submit, check with work so doeesn't deliver form and get red errors</li>
+</ul>
+</li>
+<li>Vestibular issues (inner-ear or visual perception: motion sickness, migraines, vertigo when have animation), apple turn off motion</li>
+<li>Speech, consider back up if can't talk, studder, have accent
+
+<h3><a href="http://simplyaccessible.com/article/3-relationships/">3 Types of Relationships</a></h3></li>
+</ul>
+</li>
+<li>Explicit, Implicit and content based relationship
+Label, form field: <strong>explicit</strong>
+helper: <strong>implicit</strong>
+error: <strong>content based relationship</strong>
+
+<h3>Screen reader compatible does not mean acessible</h3></li>
+<li>Problem: background images
+
+<ul>
+<li>voice recognition CTA: Flip (good but bad for screen reader)</li>
+<li>Screen reader: "Details on specific vehicle" (good but bad for voice)</li>
+<li>details instead?</li>
+</ul>
+</li>
+<li>SCAD
+
+<ul>
+<li>Alt attribute wrong for image</li>
+<li>screen reader and voice command could not find it</li>
+<li>happens more for css background image</li>
+<li>backup for voice recognition: MouseGrid 4, gets smaller to activate, now takes 6 steps to do one step</li>
+<li>CTA need to match with Alt, Image and text alternative in same layer, use SVG
+
+<ul>
+<li>Look up accessible SVG</li>
+</ul>
+</li>
+<li>Low vision might want black background to light text. high contrast mode in windows. <strong>every css background image disappears</strong>. cart, nav, search</li>
+</ul>
+</li>
+<li>Problem: when css background images are off, what content, functionality, or affordances are missing
+
+<ul>
+<li>select becomes text field</li>
+<li>currently selected is hard to see unless border</li>
+</ul>
+</li>
+<li>https://www.google.com/accessibility/all-products-features.html</li>
+<li>https://sites.google.com/a/chromium.org/dev/user-experience/low-vision-support</li>
+<li>https://chrome.google.com/webstore/detail/change-colors/jbmkekhehjedonbhoikhhkmlapalklgn</li>
+<li>Solution: be aware of background images and test</li>
+<li><a href="http://uniformjs.com/"><strong>uniform.js</strong></a>
+
+<ul>
+<li>low vision set font size and color on all pages</li>
+<li>which elements, which expected background colors, text color, font size</li>
+</ul>
+</li>
+<li>Problem: using generated content
+
+<ul>
+<li>css menu maker: use hidden text or aria-expanded="true"</li>
+<li>careful when use psuedo elements</li>
+</ul>
+</li>
+<li>sighted keyboard users need high focus compatibility user
+
+<ul>
+<li>create it with :hover :focus. needs to be added. need high visibility stuff, bc defaults don't aways work depending on color, get lost</li>
+<li>design high visibility focus indicator</li>
+</ul>
+</li>
+<li>Problem: just because something isn't visible, doesnt mean it isn't there
+
+<ul>
+<li>content off screen, focus goes back to top</li>
+</ul>
+</li>
+<li><a href="http://simplyaccessible.com/article/balance-awareness">Balance Awareness Week - Simply Accessible</a>
+
+<ul>
+<li>Paralz, carousels motion and try to turn it off
+
+<h3>Summary</h3>
+
+<h4>5 point diagnostic:</h4></li>
+</ul>
+</li>
+<li>cursor: pointer
+
+<ul>
+<li>should be a link</li>
+</ul>
+</li>
+<li>outline: none
+
+<ul>
+<li>reset style sheet, need high visibility focus indicator</li>
+</ul>
+</li>
+<li>:hover without :focus
+
+<ul>
+<li>need focus</li>
+</ul>
+</li>
+<li>backgroud: url() or background-image
+
+<ul>
+<li>you need to look will you lose meaning and content</li>
+</ul>
+</li>
+<li>::before and ::after
+
+<ul>
+<li>will you use lose meaning</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  <section class="col2">
+   <h2><a href="http://wesbos.github.io/Sublime-Text-Power-User-Talk/#1">Become a Sublime Power User, Wes Bos</a></h2>
+
+<ul>
+<li>HackerYou.com Wesbos.com</li>
+<li>Developers are slow</li>
+<li>Developers are error prone</li>
+<li>open any file = command + p
+
+<ul>
+<li>shouldn't use mouse, should be able to run through files</li>
+</ul>
+</li>
+<li>go to symbol, selector, jump to specific spot = command + R</li>
+<li>Multiple carets = command + click or command + option + drag</li>
+<li>wrap seclection in tag = CTRL + Shift + W</li>
+<li>wrap with Emmet = CTRL + W</li>
+<li>Line Bubling = Command + CTRL + up or down arrow</li>
+<li>Expand to Quotes = CTRL + '</li>
+<li>Paste and Indent = Command + shift + V</li>
+<li>OSX diaglog keyboard access</li>
+<li>Turn this on in system prefs > keyboard > shortcuts > all controls
+
+<ul>
+<li>spacebar > don't save or return > save</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>8 Packages to speed up workflow and make life awesome</h3>
+
+<ul>
+<li>Emmet HTML
+
+<ul>
+<li>Item $$ becomes numbers to increment
+.wrapper>ul>li*10>item.item$$></li>
+</ul>
+</li>
+<li>Emmet CSS
+
+<ul>
+<li>better than snippets, finds the best fit based on what you have typed in</li>
+</ul>
+</li>
+<li>Emmet for anything: Value bumping: increment or decrment just like devtools
+
+<ul>
+<li>Option + up down</li>
+<li>ctrl + up down</li>
+<li>command + option + up down</li>
+</ul>
+</li>
+<li>JS-Hint Gutter Linter
+
+<ul>
+<li>realtime js-hint feedback in gutters</li>
+</ul>
+</li>
+<li>Sublime linter, css linter, turn rules on or off</li>
+<li>GhostText for Chrome + Sublime
+
+<ul>
+<li>link any text area with sublime</li>
+<li>can use for drupal. hook it up</li>
+</ul>
+</li>
+<li>Origami
+
+<ul>
+<li>better multi-pane switching and splitting</li>
+<li>clone pane</li>
+</ul>
+</li>
+<li>Autofilename
+
+<ul>
+<li>file comipletion in HTML + CSS</li>
+<li>sugget folder and file names for you</li>
+</ul>
+</li>
+<li>JavaScriptNext ES6 Syntax Highlighting
+
+<ul>
+<li>Nicer JavaScript Syntax highlighting, supporst ES6</li>
+<li>Regular JavaScript vs ES6</li>
+</ul>
+</li>
+<li>Gutter Color
+
+<ul>
+<li>show your hex and rgb colors in your gutter</li>
+</ul>
+</li>
+<li>Color Highlighter is better
+
+<ul>
+<li>view your HEX and RGB colors inline</li>
+</ul>
+</li>
+<li>CSS3 Syntax Highlighting
+
+<ul>
+<li>Wake up to highlighting correctly</li>
+</ul>
+</li>
+<li>GitGutter
+
+<ul>
+<li>Git status in your gutter</li>
+</ul>
+</li>
+<li>Takana
+
+<ul>
+<li>intally live edit Sass, bind to key down in sass. with bourbon</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Pimp your editor</h3>
+
+<ul>
+<li>Darker color scheme can save your eyeballs: cobalt2 or soda</li>
+<li>Crisp and clear syntax highlighting will cut down on coding errors</li>
+<li>Highlight the current line
+
+<ul>
+<li>"highlight_line"</li>
+</ul>
+</li>
+<li>Increase your caret, so you can find it
+
+<ul>
+<li>"caret_extra_bottom": 2 extra_top, extra_width</li>
+</ul>
+</li>
+<li>Match brackets and tags</li>
+<li>Highlight modified tabs, so you don't forget to save</li>
+<li>Increase line height
+
+<ul>
+<li>We do for text, why not code</li>
+</ul>
+</li>
+<li>Bold folder labels Folder !=files</li>
+<li>Identation Guidelines</li>
+<li>Investing time in any editor will make you a better developer (Atom and Vim)</li>
+<li><a href="https://sublimetextbook.com/">Sublime book</a></li>
+<li>Uses Sublime 3, Wes blog has how to transfer, can transfer license</li>
+</ul>
+ 
+  </section>
+
+</div>
+
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22278100-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
