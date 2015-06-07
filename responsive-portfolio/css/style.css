@@ -430,7 +430,13 @@ header {
   background: #333;
   color: white;
 }
-
+footer {
+  background: #333;
+  color: white;
+  padding:  1em 1em;
+  clear: both;
+  font-size: 0.875em;
+}
 nav {
   /* position: absolute; */
  /* top: 0;
@@ -441,6 +447,7 @@ nav > ul > li {
 }
 nav > ul > li > a {
   color: white;
+  font-size: 0.875em;
 }
 img {
   width: 100%;
@@ -461,6 +468,14 @@ img {
 }
 .text-center {
   text-align: center;
+}
+.align-center {
+  display: block;
+  float: none !important;
+  margin: 0 auto !important;
+}
+.clearfix {
+  clear: both;
 }
 /*@media (min-width: 60em) {
   .col4 {
